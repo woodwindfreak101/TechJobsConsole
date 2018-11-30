@@ -63,19 +63,8 @@ namespace TechJobsConsole
                     // Fetch results
                     if (columnChoice.Equals("all"))
                     {
-                        searchResults = JobData.FindByValue(searchTerm);
-
-                        if(searchResults.Count == 0)
-                        {
-                            Console.WriteLine("Search results returned nothing");
-                        }
-                        else
-                        {
-                            PrintJobs(searchResults);
-                        }
-
+                        Console.WriteLine("Search all fields not yet implemented.");
                     }
-
                     else
                     {
                         searchResults = JobData.FindByColumnAndValue(columnChoice, searchTerm);
@@ -131,12 +120,13 @@ namespace TechJobsConsole
         {
             foreach (Dictionary<string, string> job in someJobs)
             {
-                foreach (KeyValuePair<string, string> details in job)
+                foreach (KeyValuePair <string, string> details in job)
                 {
                     Console.WriteLine(details.Key + " : " + details.Value);
                 }
-                Console.WriteLine("\n*******\n");
+                Console.WriteLine("\n*******************\n");
             }
+            Console.ReadLine();
         }
     }
 }
